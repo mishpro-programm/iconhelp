@@ -5,8 +5,8 @@ using namespace geode::prelude;
 #include <Geode/modify/ProfilePage.hpp>
 class $modify(MProfilePage, ProfilePage) {
 
-	bool init() {
-		if (!ProfilePage::init()) {
+	bool init(int accId, bool ownProfile) {
+		if (!ProfilePage::init(accId, ownProfile)) {
 			return false;
 		}
 		//170.5,-10
