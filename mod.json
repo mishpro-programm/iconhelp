@@ -1,0 +1,14 @@
+{
+	"geode": "v2.0.0",
+	"name": "Icons Info",
+	"developer": "mishpro",
+	"description": "",
+	"version": "v1.0.0",
+	"id": "mishpro.iconsinfo",
+	"gd": {
+		"android": "2.205",
+		"ios": "2.205",
+		"mac": "2.200",
+		"win": "2.204"
+	}
+}
