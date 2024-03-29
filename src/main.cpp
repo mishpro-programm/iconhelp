@@ -14,6 +14,8 @@ class $modify(MProfilePage, ProfilePage) {
 		auto btn = CCMenuItemSpriteExtra::create(sprite, nullptr, menu_selector(MProfilePage::onIconsInfo));
 		btn->setPosition(170.5f, -10.f);
 		this->getChildByID("player-menu")->addChild(btn);
+
+		return true;
 	}
 
 	void onIconsInfo(CCObject*) {
