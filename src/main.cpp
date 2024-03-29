@@ -13,7 +13,7 @@ class $modify(MProfilePage, ProfilePage) {
 		auto sprite = ButtonSprite::create("Icons");
 		auto btn = CCMenuItemSpriteExtra::create(sprite, nullptr, menu_selector(MProfilePage::onIconsInfo));
 		btn->setPosition(170.5f, -10.f);
-		this->getChildren()->objectAtIndex(0)->getChildByID("player-menu")->addChild(btn);
+		static_cast<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu")->addChild(btn);
 
 		return true;
 	}
