@@ -10,7 +10,7 @@ class $modify(MProfilePage, ProfilePage) {
 		//170.5,-10
 		auto sprite = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu")->getChildByID("player-icon");
 		auto btn = CCMenuItemSpriteExtra::create(sprite->getChildByID("player-icon"), this, menu_selector(MProfilePage::onIconsInfo));
-		sprite->removeFromParentAndCleanup();
+		sprite->removeFromParentAndCleanup(false);
 		btn->setPosition(sprite->getPositionX(), sprite->getPositionY());
 		auto menu = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu");
 		if(menu){
