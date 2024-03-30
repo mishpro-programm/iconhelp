@@ -8,12 +8,14 @@ class $modify(MProfilePage, ProfilePage) {
 	void loadPageFromUserInfo(GJUserScore* p0) {
 		ProfilePage::loadPageFromUserInfo(p0);
 		//170.5,-10
-		auto sprite = ButtonSprite::create("Icons");
+		auto sprite = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu")->getChildByID("player-icon")->getChildByID("player-icon");
 		auto btn = CCMenuItemSpriteExtra::create(sprite, this, menu_selector(MProfilePage::onIconsInfo));
-		btn->setPosition(170.5f, -10.f);
+		sprite->removeFromParent();
+		btn->setPosition(sprite->getPositionX(), sprite->getPositionY());
 		auto menu = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu");
 		if(menu){
 			menu->addChild(btn);
+			menu->updateLayout();
 		}
 	}
 
