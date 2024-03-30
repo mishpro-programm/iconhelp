@@ -5,17 +5,16 @@ using namespace geode::prelude;
 #include <Geode/modify/ProfilePage.hpp>
 class $modify(MProfilePage, ProfilePage) {
 
-	bool init(int accId, bool ownProfile) {
-		if (!ProfilePage::init(accId, ownProfile)) {
-			return false;
-		}
+	void loadPageFromUserInfo(GJUseScore* p0) {
+		ProfilePage::loadPageFromUserInfo(p0)
 		//170.5,-10
 		auto sprite = ButtonSprite::create("Icons");
 		auto btn = CCMenuItemSpriteExtra::create(sprite, nullptr, menu_selector(MProfilePage::onIconsInfo));
 		btn->setPosition(170.5f, -10.f);
-		static_cast<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu")->addChild(btn);
-
-		return true;
+		auto menu = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu");
+		if(menu){
+			menu->addChild(btn);
+		}
 	}
 
 	void onIconsInfo(CCObject*) {
