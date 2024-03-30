@@ -19,6 +19,7 @@ class $modify(MProfilePage, ProfilePage) {
 
 	void onIconsInfo(CCObject*) {
 		auto popup = ItemInfoPopup::create(m_score->m_playerCube, GameManager::sharedState()->iconTypeToUnlockType(IconType::Cube));
+		popup->setZOrder(this->getZOrder() + 1);
 		CCScene::get()->addChild(popup);
 	}
 };
