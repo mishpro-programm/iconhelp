@@ -5,8 +5,8 @@ using namespace geode::prelude;
 #include <Geode/modify/ProfilePage.hpp>
 class $modify(MProfilePage, ProfilePage) {
 
-	void loadPageFromUserInfo(GJUseScore* p0) {
-		ProfilePage::loadPageFromUserInfo(p0)
+	void loadPageFromUserInfo(GJUserScore* p0) {
+		ProfilePage::loadPageFromUserInfo(p0);
 		//170.5,-10
 		auto sprite = ButtonSprite::create("Icons");
 		auto btn = CCMenuItemSpriteExtra::create(sprite, nullptr, menu_selector(MProfilePage::onIconsInfo));
