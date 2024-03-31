@@ -15,7 +15,7 @@ class $modify(MProfilePage, ProfilePage) {
 		auto menu = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu");
 		if(menu){
 			menu->addChild(btn);
-			menu->updateLayout();
+			//menu->updateLayout();
 		}
 	}
 
