@@ -9,12 +9,12 @@ class $modify(MProfilePage, ProfilePage) {
 		ProfilePage::loadPageFromUserInfo(p0);
 		auto menu = as<CCNode*>(this->getChildren()->objectAtIndex(0))->getChildByID("player-menu");
 		
-		auto cSize = new CCSize(42.6f, 42.6f);
+		CCSize cSize(42.6f, 42.6f);
 		auto cubeSprite = menu->getChildByID("player-icon");
 		auto cubeBtn = CCMenuItemSpriteExtra::create(cubeSprite->getChildByID("player-icon"), this, menu_selector(MProfilePage::onCubeInfo));
 		cubeSprite->removeFromParentAndCleanup(false);
 		cubeBtn->setPosition(cubeSprite->getPositionX(), cubeSprite->getPositionY());
-		cubeBtn->setContentSize(&cSize);
+		cubeBtn->setContentSize(cSize);
 		menu->addChild(cubeBtn);
 	}
 
