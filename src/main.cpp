@@ -13,7 +13,7 @@ class $modify(MProfilePage, ProfilePage) {
 		auto cubeSprite = menu->getChildByID("player-icon");
 		auto cubeBtn = CCMenuItemSpriteExtra::create(cubeSprite->getChildByID("player-icon"), this, menu_selector(MProfilePage::onCubeInfo));
 		cubeSprite->removeFromParentAndCleanup(false);
-		cubeBtn->setPosition(cubeSprite->getPositionX(), cubeSprite->getPositionY());
+		cubeBtn->setPosition(cubeSprite->getPositionX()+42.6f, cubeSprite->getPositionY()+42.6f);
 		cubeBtn->setContentSize(cSize);
 		menu->addChild(cubeBtn);
 	}
